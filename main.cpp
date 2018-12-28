@@ -17,51 +17,84 @@ Point2d pixel2cam(const Point2d &p, const Mat &K)
      (p.y-K.at<double>(1,2))/K.at<double>(1,1)
      );
 }
-
-void triangulation( const KeyPointVector &keypoint_1, const KeyPointVector &keypoint_2, const MatchVector &matches,
-                   const Mat &R, const Mat &t, vector<Point3d> &points)
+#define EARTH_RADIUS 6378137.0
+const double Pi = 3.1415926;
+double rad(double degree)
+{
+    return degree * Pi / 180.0f;
+}
+//计算距离  m
+double computeDistance(double lng1, double lat1, double lng2, double lat2)
+{
+    double radLat1 = rad(lat1);
+    double radLat2 = rad(lat2);
+    double a = radLat1 - radLat2;
+    double b = rad(lng1) - rad(lng2);
+    
+    double s = 2 * asin(sqrt(pow(sin(a/2),2) +
+                             cos(radLat1)*cos(radLat2)*pow(sin(b/2),2)));
+    s = s * EARTH_RADIUS;
+    s = round(s * 10000) / 10000;
+    return s;
+}
+double triangulation( const Point2d &pt1,const Point2d &pt2, const Mat &R, const Mat &t, Point3d &outpt)
 {
     Mat T1 = (Mat_<double>(3,4) << 1,0,0,0,
                                    0,1,0,0,
-                                   0,0,1,0,
-                                    0,0,0,0);
+                                   0,0,1,0);
     Mat T2 = (Mat_<double>(3,4) <<
-              R.at<double>(0,0),R.at<double>(0,1),R.at<double>(0,2),t.at<double>(0,0),
-              R.at<double>(1,0),R.at<double>(1,1),R.at<double>(1,2),t.at<double>(1,0),
-              R.at<double>(2,0),R.at<double>(2,1),R.at<double>(2,2),t.at<double>(2,0));
+              R.at<double>(0,0),R.at<double>(0,1),R.at<double>(0,2),t.at<double>(0,0) ,
+              R.at<double>(1,0),R.at<double>(1,1),R.at<double>(1,2),t.at<double>(1,0) ,
+              R.at<double>(2,0),R.at<double>(2,1),R.at<double>(2,2),t.at<double>(2,0) );
     
-    Mat K = (Mat_<double>(3,3) << 7.188560000000e+02, 0.000000000000e+00, 6.071928000000e+02,
-                                  0.000000000000e+00, 7.188560000000e+02, 1.852157000000e+02,
-                                  0.000000000000e+00, 0.000000000000e+00, 1.000000000000e+00 );
- 
+    Mat K = (Mat_<double>(3,3) <<  1.8144486313396042e+03,0  ,2.0521093136805948e+03,
+                                   0, 1.8144486313396042e+03, 1.0898609600712157e+03,
+                                   0, 0, 1);
+   
+#if 0
+    Mat R1,R2,P1,P2,Q;
+    
+    Mat D = (Mat_<double>(14,1) << 2.7143309169665835e+00 ,7.6144381712092502e-01 ,4.2032650006901159e-04,
+             2.0658547225350938e-05 ,-3.9272644112434946e-01,
+             2.8270485246735952e+00 ,1.0376228716992399e+00,
+             -5.2110054743233547e-01 ,0 , 0 , 0 , 0 , 0 , 0);
+    
+    stereoRectify(K, D, K, D, Size(4096,2168), R, t, R1, R2, P1, P2, Q,0);
+    
+    cout << "P1 : " << P1 << endl;
+    cout << "P2 : " << P2 << endl;
+#endif
+    Mat pt_4d;
+    //Point2d pt1(30.60129500574, 114.40327060991);//, 22.064 };
+    //    Point2d pt2(30.60129672252, 114.40331230623);//, 22.095 };
     vector<Point2d> pts_1, pts_2;
     
-    for(DMatch m : matches)
-    {
-        pts_1.push_back( pixel2cam( keypoint_1[m.queryIdx].pt, K));
-        pts_2.push_back( pixel2cam( keypoint_2[m.trainIdx].pt, K));
-    }
+    pts_1.push_back(pixel2cam(pt1, K));
+    pts_2.push_back(pixel2cam(pt2, K));
     
-    Mat pts_4d;
-    triangulatePoints(T1, T2, pts_1, pts_2, pts_4d);
+    triangulatePoints(T1, T2, pts_1, pts_2, pt_4d);
     
-    for( int i = 0; i < pts_4d .cols; ++i)
-    {
-        Mat x = pts_4d.col(i);
-        x /= x.at<float>(3,0);
-        Point3d p( x.at<float>(0,0),
-                   x.at<float>(1,0),
-                   x.at<float>(2,0));
-        points.push_back(p);
-        cout << "triangulate pos : " << p.x << " " << p.y << " " << p.z << endl;
-    }
+    Mat x = pt_4d.col(0);
+    
+    x = x/x.at<double>(3,0);
+    outpt = Point3d(x.at<double>(0,0),x.at<double>(1,0),x.at<double>(2,0));
+    
+    
+    double scale = computeDistance(114.40327060991,30.60129500574,
+                                   114.40331230623,30.60129672252);
+    double d = scale / sqrt(t.at<double>(0,0) * t.at<double>(0,0)+
+                            t.at<double>(1,0) * t.at<double>(1,0)+
+                            t.at<double>(2,0) * t.at<double>(2,0));
+    
+    double len = sqrt(outpt.x * outpt.x + outpt.y * outpt.y + outpt.z * outpt.z) * d;
+    cout << "ouput pos :" << outpt.x  << " " << outpt.y << " " << outpt.z << " " << (len - 19.5855) << endl;
+    
+    return len ;
 }
 
 void pose_estimation_2d2d(const KeyPointVector &kypt1,const KeyPointVector &kypt2,
                           const MatchVector &matches, Mat &R, Mat &t)
 {
-//    Mat K = (Mat_<double>(3,3) << 7.188560000000e+02, 0.000000000000e+00, 6.071928000000e+02 ,0.000000000000e+00,0.000000000000e+00 ,7.188560000000e+02 ,1.852157000000e+02, 0.000000000000e+00, 0.000000000000e+00, 0.000000000000e+00, 1.000000000000e+00,0.000000000000e+00);
-    
     vector<Point2f> points1;
     vector<Point2f> points2;
     
@@ -75,16 +108,12 @@ void pose_estimation_2d2d(const KeyPointVector &kypt1,const KeyPointVector &kypt
     
     fundamental_matrix = findFundamentalMat( points1, points2, CV_FM_8POINT);
     
-    Point2d principal_point( 607.1928,185.2157);
-    int focal_length = 718.856;
+    Point2d principal_point( 2.0521093136805948e+03,1.0898609600712157e+03);//光心坐标
+    int focal_length = 1.8144486313396042e+03;                              //焦距
     
     Mat essential_matrix = findEssentialMat(points1, points2, focal_length,principal_point,RANSAC);
     
     recoverPose( essential_matrix, points1, points2, R, t, focal_length,principal_point);
-    
-    cout << "R is " << endl << R << endl;
-    cout << "t is " << endl << t << endl;
-    
 }
 
 
@@ -109,37 +138,49 @@ void find_matches( const Mat &img_1, const Mat &img_2,KeyPointVector &keypoints_
     {
         double dist = tmpmatches[i].distance;
         if(dist < min_dist)min_dist = dist;
-        if(dist < max_dist)max_dist = dist;
+        if(dist > max_dist)max_dist = dist;
     }
     
     cout << " mindist : " << min_dist << endl;
     cout << " maxdist : " << max_dist << endl;
     
-    for(int i = 0; i < descriptors_1.rows;++i)
+    for(int i = 0; i < tmpmatches.size();++i)
     {
-        if( tmpmatches[i].distance <= max(2 * min_dist,30.0))
+        const int sz = 10;
+        Rect2f rect(0,0,sz,sz);
+        if( (keypoints_1[tmpmatches[i].queryIdx].pt - keypoints_2[tmpmatches[i].trainIdx].pt).inside(rect))
+            continue;
+//        Rect2f  rect(0,1600,4096,600);
+//        if(keypoints_1[tmpmatches[i].queryIdx].pt.inside(rect) )
+//            continue;
+//
+        if( tmpmatches[i].distance <= max(2 * min_dist,30.0) )
         {
             matches.push_back(tmpmatches[i]);
         }
     }
     
-#if 0
+    cout << "matches count is : " << matches.size() << endl;
+    
+#if 1
     Mat img_match;
     Mat img_goodmatch;
     
     drawMatches(img_1, keypoints_1, img_2, keypoints_2, matches, img_match);
-    drawMatches(img_1, keypoints_1, img_2, keypoints_2, good_matches, img_goodmatch);
+//    drawMatches(img_1, keypoints_1, img_2, keypoints_2, good_matches, img_goodmatch);
     
-    imshow("all feautres", img_match);
-    imshow("optimise features", img_goodmatch);
+//    imshow("all feautres", img_match);
+    imwrite("/Volumes/mac/Data/measure/match.png", img_match);
+//    imshow("optimise features", img_goodmatch);
 #endif
     
 }
 
+
 int main(void)
-{
-    Mat img_1 = imread("/Volumes/mac/Data/01/image_0/000000.png");
-    Mat img_2 = imread("/Volumes/mac/Data/01/image_0/000001.png");
+{   
+    Mat img_1 = imread("/Volumes/mac/Data/measure/4014.jpg");
+    Mat img_2 = imread("/Volumes/mac/Data/measure/4015.jpg");
     
     KeyPointVector keypoints_1, keypoints_2;
     MatchVector matches;
@@ -151,7 +192,11 @@ int main(void)
     
     vector<Point3d> pts;
     
-    triangulation(keypoints_1, keypoints_2, matches, R, t, pts);
+    Point2d pt1(2735, 850);//, 22.064 };
+    Point2d pt2(2880, 810);//, 22.095 };
+    
+    Point3d outpt;
+    triangulation(pt1, pt2, R, t, outpt);
     
     waitKey(0);
     
