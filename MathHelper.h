@@ -131,9 +131,9 @@ public:
         GeoMath::normalize(uyAxis);
         //构建世界变换矩阵  相机 -> 世界
         cv::Mat R = (cv::Mat_<double>(4,4) << xAxis.x , xAxis.y , xAxis.z ,pt.x,
-                 uyAxis.x, uyAxis.y, uyAxis.z,pt.y,
-                 zAxis.x , zAxis.y , zAxis.z ,pt.z,
-                 0       ,0        ,0        ,1);
+                                              uyAxis.x, uyAxis.y, uyAxis.z,pt.y,
+                                              zAxis.x , zAxis.y , zAxis.z ,pt.z,
+                                              0       ,0        ,0        ,1);
         return R;
     }
     
