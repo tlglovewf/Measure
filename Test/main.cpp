@@ -18,16 +18,11 @@ int main(void)
     cv::Point3d pt1 = GeoMath::ComputeXYZFromGPS(114.40327060991, 30.60129500574);
     cv::Point3d pt2 = GeoMath::ComputeXYZFromGPS(114.40331230623, 30.60129672252);
     
-    cv::Point2d ggp = GeoMath::ComputeGPSFromXYZ(pt1);
-    
-    std::cout << std::setprecision(10) << ggp.x << " " << ggp.y << std::endl << 114.40327060991<<" " << 30.60129500574 << std::endl;
-    
     cv::Point3d dir = pt2 - pt1;
     
     GeoMath::normalize(dir);
     
     cv::Point3d pt(1.72623,-0.607029,4.58698);
-    
     double scale = GeoMath::ComputeDistance(114.40327060991,30.60129500574,114.40331230623,30.60129672252);
 #if 0
     //根据行驶方向以及相对相机z轴夹角

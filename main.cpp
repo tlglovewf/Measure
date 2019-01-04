@@ -4,6 +4,9 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/calib3d.hpp>
 #include <opencv2/imgproc.hpp>
+
+#include <opencv2/video/tracking.hpp>
+
 #include "MathHelper.h"
 #include <iomanip>
 using namespace std;
@@ -136,6 +139,61 @@ double triangulation( const Point2d &pt1,const Point2d &pt2,double scale, const 
     return len ;
 }
 
+void featureDetection(Mat img_1, vector<Point2f>& points1)    {   //uses FAST as of now, modify parameters as necessary
+    vector<KeyPoint> keypoints_1;
+    int fast_threshold = 20;
+    bool nonmaxSuppression = true;
+    FAST(img_1, keypoints_1, fast_threshold, nonmaxSuppression);
+    KeyPoint::convert(keypoints_1, points1, vector<int>());
+}
+
+void featureTracking(Mat img_1, Mat img_2, vector<Point2f>& points1, vector<Point2f>& points2, vector<uchar>& status)    {
+    
+    //this function automatically gets rid of points for which tracking fails
+    
+    vector<float> err;
+    Size winSize=Size(21,21);
+    TermCriteria termcrit=TermCriteria(TermCriteria::COUNT+TermCriteria::EPS, 30, 0.01);
+    
+    calcOpticalFlowPyrLK(img_1, img_2, points1, points2, status, err, winSize, 3, termcrit, 0, 0.001);
+    
+    //getting rid of points for which the KLT tracking failed or those who have gone outside the frame
+    int indexCorrection = 0;
+    for( int i=0; i<status.size(); i++)
+    {  Point2f pt = points2.at(i- indexCorrection);
+        if ((status.at(i) == 0)||(pt.x<0)||(pt.y<0))    {
+            if((pt.x<0)||(pt.y<0))    {
+                status.at(i) = 0;
+            }
+            points1.erase (points1.begin() + (i - indexCorrection));
+            points2.erase (points2.begin() + (i - indexCorrection));
+            indexCorrection++;
+        }
+        
+    }
+    
+}
+
+void pose_estimation_2d2d(const Mat &img1, const Mat &img2, Mat &R, Mat &t,const Point2d &principal_point, double focal_length)
+{
+    Mat img_out1,img_out2;
+    cvtColor(img1, img_out1, CV_BGR2GRAY);
+    cvtColor(img2, img_out2, CV_BGR2GRAY);
+    vector<uchar> status;
+    vector<Point2f> points1;
+    vector<Point2f> points2;
+    featureDetection(img_out1,points1);
+    featureTracking(img_out1, img_out2, points1, points2, status);
+    
+    Mat fundamental_matrix;
+    
+    fundamental_matrix = findFundamentalMat( points1, points2, CV_FM_8POINT);
+    
+    Mat essential_matrix = findEssentialMat(points1, points2, focal_length,principal_point,RANSAC);
+    
+    recoverPose( essential_matrix, points1, points2, R, t, focal_length,principal_point);
+}
+
 //恢复姿态
 void pose_estimation_2d2d(const KeyPointVector &kypt1,const KeyPointVector &kypt2,
                           const MatchVector &matches, Mat &R, Mat &t,const Point2d &principal_point, double focal_length)
@@ -204,20 +262,7 @@ void find_matches( const Mat &img_1, const Mat &img_2,KeyPointVector &keypoints_
         }
     }
 #else
-    BFMatcher matcher;
-    
-    vector< MatchVector > knnMatches;
-    matcher.knnMatch(descriptors_1, descriptors_2, knnMatches, 2);
-    double minRatio = 1.0f / 1.4f;
-    for (size_t i = 0; i < knnMatches.size(); i++) {
-        const DMatch& bestMatch = knnMatches[i][0];
-        const DMatch& betterMatch = knnMatches[i][1];
-        
-        float  distanceRatio = bestMatch.distance / betterMatch.distance;
-        if (distanceRatio < minRatio)
-            matches.push_back(bestMatch);
-    }
-    
+  
     
 #endif
     
@@ -275,7 +320,10 @@ cv::Point2d  ComputeGPSFromCamPos(const cv::Point3d &campos, const cv::Point3d &
     
     cv::Point2d  gp = GeoMath::ComputeGPSFromXYZ(rstpt);
     
-    std::cout << std::setprecision(20)  << " " << gp.x << "," << gp.y << endl << "absolute pos : "
+    std::cout << std::setprecision(20)  << "prerpt :"<< preGps.y << ","<< preGps.x << endl<<
+                                           "currpt :"<< curGps.y << ","<< curGps.x << endl<<
+                                           "target :"<< target.y << ","<< target.x << endl<<
+                                           "output :" << gp.y << "," << gp.x << endl << "absolute distance : "
     << GeoMath::ComputeDistance(gp.x, gp.y, target.x, target.y) <<  std::endl;
     
     return gp;
@@ -286,7 +334,7 @@ cv::Point2d  ComputeGPSFromCamPos(const cv::Point3d &campos, const cv::Point3d &
 int main(void)
 {
     
-#if 0
+#if 1
     Mat img_1 = imread("/Volumes/mac/Data/measure/4014.jpg");
     Mat img_2 = imread("/Volumes/mac/Data/measure/4015.jpg");
     
@@ -298,8 +346,8 @@ int main(void)
     Point2d  principal_point( 2.0521093136805948e+03,1.0898609600712157e+03);//光心坐标
     int      focal_length = 1.8144486313396042e+03;                          //焦距
     
-    Point2d pt1(2735, 850);
-    Point2d pt2(2880, 810);
+    Point2d pt1(2735  , 850);
+    Point2d pt2(2879.9, 811.267);
     
     cv::Point3d preGps(114.40327060991, 30.60129500574,0);
     cv::Point3d curGps(114.40331230623, 30.60129672252,0);
@@ -310,7 +358,7 @@ int main(void)
     double realdistance = 19.5855;
     
     cv::Point2d target(114.40350395, 30.60123760);
-#elif 1
+#elif 0
     Mat img_1 = imread("/Volumes/mac/Data/measure/1_1.jpg");
     Mat img_2 = imread("/Volumes/mac/Data/measure/1_2.jpg");
     
@@ -323,7 +371,7 @@ int main(void)
     int      focal_length = 2.3695365586649123e+3;                         //焦距
     
     Point2d pt1(2979.1,711.3);
-    Point2d pt2(3080.2,698.3);
+    Point2d pt2(3080.6,699.864);
     
     cv::Point3d preGps(114.47140275, 30.45029056,0); //19.0043
     cv::Point3d curGps(114.47144438, 30.45029059,0); //18.9148
@@ -367,11 +415,15 @@ int main(void)
     KeyPointVector keypoints_1, keypoints_2;
     MatchVector matches;
     
-    find_matches(img_1, img_2, keypoints_1, keypoints_2, matches);
   
     Mat R,t;
-    pose_estimation_2d2d(keypoints_1, keypoints_2, matches, R, t,principal_point,focal_length);
     
+#if 1
+    find_matches(img_1, img_2, keypoints_1, keypoints_2, matches);           //特征匹配
+    pose_estimation_2d2d(keypoints_1, keypoints_2, matches, R, t,principal_point,focal_length);
+#else
+    pose_estimation_2d2d(img_1, img_2, R, t, principal_point, focal_length); //光流
+#endif
     vector<Point3d> pts;
   
     Point3d outpt;
@@ -379,7 +431,7 @@ int main(void)
     
     ComputeGPSFromCamPos(outpt, preGps, curGps,target);
     
-    waitKey(0);
+    //waitKey(0);
     
    return 0;
 }
