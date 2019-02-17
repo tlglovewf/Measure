@@ -9,13 +9,14 @@
 
 #include "MathHelper.h"
 #include <iomanip>
+#include <fstream>
 using namespace std;
 using namespace cv;
 
 typedef std::vector<KeyPoint>  KeyPointVector;
 typedef std::vector<DMatch>    MatchVector;
 
-
+const char* filePath="/Volumes/mac/Data/measureResult.txt";
 
 /**
  From "Triangulation", Hartley, R.I. and Sturm, P., Computer vision and image understanding, 1997
@@ -29,19 +30,18 @@ Mat LinearLSTriangulation(Point3d u,       //homogenous image point (u,v,1)
     //build matrix A for homogenous equation system Ax = 0
     //assume X = (x,y,z,1), for Linear-LS method
     //which turns it into a AX = B system, where A is 4x3, X is 3x1 and B is 4x1
-    Matx43d A(u.x*P(2,0)-P(0,0),    u.x*P(2,1)-P(0,1),      u.x*P(2,2)-P(0,2),
-              u.y*P(2,0)-P(1,0),    u.y*P(2,1)-P(1,1),      u.y*P(2,2)-P(1,2),
-              u1.x*P1(2,0)-P1(0,0), u1.x*P1(2,1)-P1(0,1),   u1.x*P1(2,2)-P1(0,2),
-              u1.y*P1(2,0)-P1(1,0), u1.y*P1(2,1)-P1(1,1),   u1.y*P1(2,2)-P1(1,2)
+    Matx43d A(u.x*P(2, 0) - P(0, 0), u.x*P(2, 1) - P(0, 1), u.x*P(2, 2) - P(0, 2),
+              u.y*P(2, 0) - P(1, 0), u.y*P(2, 1) - P(1, 1), u.y*P(2, 2) - P(1, 2),
+              u1.x*P1(2, 0) - P1(0, 0), u1.x*P1(2, 1) - P1(0, 1), u1.x*P1(2, 2) - P1(0, 2),
+              u1.y*P1(2, 0) - P1(1, 0), u1.y*P1(2, 1) - P1(1, 1), u1.y*P1(2, 2) - P1(1, 2)
               );
-    Mat B = (Mat_<double>(4,1) <<    -(u.x*P(2,3)    -P(0,3)),
-             -(u.y*P(2,3)  -P(1,3)),
-             -(u1.x*P1(2,3)    -P1(0,3)),
-             -(u1.y*P1(2,3)    -P1(1,3)));
+    Mat_<double> B = (Mat_<double>(4, 1) << -(u.x*P(2, 3) - P(0, 3)),
+                      -(u.y*P(2, 3) - P(1, 3)),
+                      -(u1.x*P1(2, 3) - P1(0, 3)),
+                      -(u1.y*P1(2, 3) - P1(1, 3)));
     
-    Mat X;
-    solve(A,B,X,DECOMP_SVD);
-    
+    Mat_<double> X;
+    solve(A, B, X, DECOMP_SVD);
     return X;
 }
 
@@ -51,39 +51,42 @@ Mat_<double> IterativeLinearLSTriangulation(Point3d u,    //homogenous image poi
                                             Point3d u1,         //homogenous image point in 2nd camera
                                             Matx34d P1          //camera 2 matrix
 ) {
+    
     double wi = 1, wi1 = 1;
-    Mat_<double> X(4,1);
-    for (int i=0; i<10; i++) { //Hartley suggests 10 iterations at most
-        Mat_<double> X_ = LinearLSTriangulation(u,P,u1,P1);
+    Mat_<double> X(4, 1);
+    
+    
+    
+    for (int i = 0; i < 10; i++) { //Hartley suggests 10 iterations at most
+        Mat_<double> X_ = LinearLSTriangulation(u, P, u1, P1);
         X(0) = X_(0); X(1) = X_(1); X(2) = X_(2); X(3) = 1.0;
-        
         //recalculate weights
         double p2x = Mat_<double>(Mat_<double>(P).row(2)*X)(0);
         double p2x1 = Mat_<double>(Mat_<double>(P1).row(2)*X)(0);
-#define EPSILON 1.0e-6
+#define EPSILON 1e-6
         //breaking point
-        if(fabsf(wi - p2x) <= DBL_EPSILON && fabsf(wi1 - p2x1) <= DBL_EPSILON)
-        {
-            break;
-        }
+        if (fabsf(wi - p2x) <= EPSILON && fabsf(wi1 - p2x1) <= EPSILON) break;
+#undef EPSILON
+        
         wi = p2x;
         wi1 = p2x1;
         
         //reweight equations and solve
-        Matx43d A((u.x*P(2,0)-P(0,0))/wi,       (u.x*P(2,1)-P(0,1))/wi,         (u.x*P(2,2)-P(0,2))/wi,
-                  (u.y*P(2,0)-P(1,0))/wi,       (u.y*P(2,1)-P(1,1))/wi,         (u.y*P(2,2)-P(1,2))/wi,
-                  (u1.x*P1(2,0)-P1(0,0))/wi1,   (u1.x*P1(2,1)-P1(0,1))/wi1,     (u1.x*P1(2,2)-P1(0,2))/wi1,
-                  (u1.y*P1(2,0)-P1(1,0))/wi1,   (u1.y*P1(2,1)-P1(1,1))/wi1,     (u1.y*P1(2,2)-P1(1,2))/wi1
+        Matx43d A((u.x*P(2, 0) - P(0, 0)) / wi, (u.x*P(2, 1) - P(0, 1)) / wi, (u.x*P(2, 2) - P(0, 2)) / wi,
+                  (u.y*P(2, 0) - P(1, 0)) / wi, (u.y*P(2, 1) - P(1, 1)) / wi, (u.y*P(2, 2) - P(1, 2)) / wi,
+                  (u1.x*P1(2, 0) - P1(0, 0)) / wi1, (u1.x*P1(2, 1) - P1(0, 1)) / wi1, (u1.x*P1(2, 2) - P1(0, 2)) / wi1,
+                  (u1.y*P1(2, 0) - P1(1, 0)) / wi1, (u1.y*P1(2, 1) - P1(1, 1)) / wi1, (u1.y*P1(2, 2) - P1(1, 2)) / wi1
                   );
-        Mat_<double> B = (Mat_<double>(4,1) <<    -(u.x*P(2,3)    -P(0,3))/wi,
-                          -(u.y*P(2,3)  -P(1,3))/wi,
-                          -(u1.x*P1(2,3)    -P1(0,3))/wi1,
-                          -(u1.y*P1(2,3)    -P1(1,3))/wi1
+        Mat_<double> B = (Mat_<double>(4, 1) << -(u.x*P(2, 3) - P(0, 3)) / wi,
+                          -(u.y*P(2, 3) - P(1, 3)) / wi,
+                          -(u1.x*P1(2, 3) - P1(0, 3)) / wi1,
+                          -(u1.y*P1(2, 3) - P1(1, 3)) / wi1
                           );
         
-        solve(A,B,X_,DECOMP_SVD);
+        solve(A, B, X_, DECOMP_SVD);
         X(0) = X_(0); X(1) = X_(1); X(2) = X_(2); X(3) = 1.0;
     }
+    
     return X;
 }
 
@@ -290,25 +293,30 @@ cv::Point2d  ComputeGPSFromCamPos(const cv::Point3d &campos, const cv::Point3d &
     
     GeoMath::normalize(dir);
     
+    
+  
 #if 0
+    std::cout << "calc pos from pic angle : " << std::endl;
+    
     //根据行驶方向以及相对相机z轴夹角
     double θ = atan(campos.x / campos.z);
     
     cv::Point3d cdir(dir.x*cos(θ) + dir.y * sin(θ), -dir.y*cos(θ) + dir.x * sin(θ),0);
     GeoMath::normalize(cdir);
     double len = GeoMath::getLength(campos);
-    pt2 =  pt2 + len * cdir;
+    pt2 =  pt1 + len * cdir;
     
     cv::Point2d gg= GeoMath::ComputeGPSFromXYZ(pt2);
-    std::cout<< std::setprecision(10) << gg.x << "," << gg.y << " absolute pos :" <<
+    std::cout<< std::setprecision(10) << gg.x << "," << gg.y << " absolute length :" <<
     GeoMath::ComputeDistance(gg.x,gg.y,target.x,target.y) << std::endl;
-    
+    return gg;
 #else
+     std::cout << "calc pos from pic matrix : " << std::endl;
     cv::Point3d zAixs = pt2 - pt1;  //行驶方向(相机拍摄方向）
     GeoMath::normalize(zAixs);      //单位化
-    cv::Point3d yAixs = pt2;        //up方向
+    cv::Point3d yAixs = pt1;        //up方向
     GeoMath::normalize(yAixs);      //单位化
-    Mat R = GeoMath::ComputeWorldTransMatrix(zAixs, yAixs, pt2);//获取世界变换矩阵
+    Mat R = GeoMath::ComputeWorldTransMatrix(zAixs, yAixs, pt1);//获取世界变换矩阵
     
     Mat pos = (Mat_<double>(4,1) << campos.x,campos.y,campos.z,1) ;
     
@@ -320,7 +328,7 @@ cv::Point2d  ComputeGPSFromCamPos(const cv::Point3d &campos, const cv::Point3d &
     
     cv::Point2d  gp = GeoMath::ComputeGPSFromXYZ(rstpt);
     
-    std::cout << std::setprecision(20)  << "prerpt :"<< preGps.y << ","<< preGps.x << endl<<
+    std::cout << std::setprecision(20)  << "prevpt :"<< preGps.y << ","<< preGps.x << endl<<
                                            "currpt :"<< curGps.y << ","<< curGps.x << endl<<
                                            "target :"<< target.y << ","<< target.x << endl<<
                                            "output :" << gp.y << "," << gp.x << endl << "absolute distance : "
@@ -334,7 +342,7 @@ cv::Point2d  ComputeGPSFromCamPos(const cv::Point3d &campos, const cv::Point3d &
 int main(void)
 {
     
-#if 1
+#if 0
     Mat img_1 = imread("/Volumes/mac/Data/measure/4014.jpg");
     Mat img_2 = imread("/Volumes/mac/Data/measure/4015.jpg");
     
@@ -346,9 +354,9 @@ int main(void)
     Point2d  principal_point( 2.0521093136805948e+03,1.0898609600712157e+03);//光心坐标
     int      focal_length = 1.8144486313396042e+03;                          //焦距
     
-    Point2d pt1(2735  , 850);
-    Point2d pt2(2879.9, 811.267);
-    
+    Point2d pt1(2756,866);         //(2735  , 850);
+    Point2d pt2(2907,827);         //(2879.9, 811.267);
+
     cv::Point3d preGps(114.40327060991, 30.60129500574,0);
     cv::Point3d curGps(114.40331230623, 30.60129672252,0);
     
@@ -358,7 +366,22 @@ int main(void)
     double realdistance = 19.5855;
     
     cv::Point2d target(114.40350395, 30.60123760);
-#elif 0
+    
+    
+//    Mat  cam_distort = (Mat_<double>(14,1) << 2.7143309169665835e+00, 7.6144381712092502e-01, 4.2032650006901159e-04,
+//                        2.0658547225350938e-05, -3.9272644112434946e-01,
+//                        2.8270485246735952e+00, 1.0376228716992399e+00,
+//                        -5.2110054743233547e-01, 0. ,0. ,0. ,0. ,0. ,0.);
+//
+//    Mat img1_distort,img2_distort;
+//
+//    undistort(img_1, img1_distort, K, cam_distort);
+//    undistort(img_2, img2_distort, K, cam_distort);
+//
+//    imwrite("/Volumes/mac/Data/measure/4014_distort.jpg", img1_distort);
+//    imwrite("/Volumes/mac/Data/measure/4015_distort.jpg", img2_distort);
+
+#elif 1
     Mat img_1 = imread("/Volumes/mac/Data/measure/1_1.jpg");
     Mat img_2 = imread("/Volumes/mac/Data/measure/1_2.jpg");
     
@@ -418,7 +441,7 @@ int main(void)
   
     Mat R,t;
     
-#if 1
+#if 0
     find_matches(img_1, img_2, keypoints_1, keypoints_2, matches);           //特征匹配
     pose_estimation_2d2d(keypoints_1, keypoints_2, matches, R, t,principal_point,focal_length);
 #else
@@ -429,9 +452,100 @@ int main(void)
     Point3d outpt;
     triangulation(pt1, pt2,scale, R, t,K, outpt,realdistance);
     
-    ComputeGPSFromCamPos(outpt, preGps, curGps,target);
+    outpt.y = -outpt.y;
     
-    //waitKey(0);
+    std::cout << "==================" << std::endl;
+    
+    std::cout << "length : " << GeoMath::getLength(outpt) << std::endl;
+    
+    std::cout << "------------------" << std::endl;
+    
+    
+    Point2d result = ComputeGPSFromCamPos(outpt, preGps, curGps,target);
+    
+#if 0 //验证世界变换矩阵
+    {
+
+        cout << "__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__-" << endl;
+        cout << "__--__--__--__--__--验证世界变换矩阵__--__--__--__--__--__--__--" << endl;
+        cv::Point3d pt1 = GeoMath::ComputeXYZFromGPS(preGps.x, preGps.y);
+        cv::Point3d pt2 = GeoMath::ComputeXYZFromGPS(curGps.x, curGps.y);
+
+        cv::Point3d dppt = pt2-pt1;
+        cout << "pt1 : " << pt1.x << " " << pt1.y << " " << pt1.z << endl;
+        cout << "pt2 : " << pt2.x << " " << pt2.y << " " << pt2.z << endl;
+        cv::Point3d zAixs = pt2 - pt1;  //行驶方向(相机拍摄方向）
+        GeoMath::normalize(zAixs);      //单位化
+        cv::Point3d yAixs = pt1;        //up方向
+        GeoMath::normalize(yAixs);      //单位化
+        Mat R = GeoMath::ComputeWorldTransMatrix(zAixs, yAixs, pt1);//获取世界变换矩阵
+
+
+        cv::Point3d ddpt(0,0,GeoMath::ComputeDistance(preGps.x, preGps.y, curGps.x, curGps.y));
+
+        Mat ccpos = (Mat_<double>(4,1) << ddpt.x,-ddpt.y,ddpt.z,1) ;
+
+        Mat cccrst = R * ccpos;
+
+        cv::Point3d ccpt(cccrst.at<double>(0,0)/cccrst.at<double>(3,0),
+                         cccrst.at<double>(1,0)/cccrst.at<double>(3,0),
+                         cccrst.at<double>(2,0)/cccrst.at<double>(3,0));
+
+        cv::Point2d tmp = GeoMath::ComputeGPSFromXYZ(ccpt);
+
+        cout << std::setprecision(10) << "curgps : " << curGps.x << " " << curGps.y << endl;
+        cout << std::setprecision(10) << "calgps : " << tmp.x    << " " << tmp.y    << endl;
+        cout << GeoMath::getLength(ddpt) << " : " << GeoMath::ComputeDistance(tmp.x, tmp.y, curGps.x, curGps.y) << endl;
+
+
+    }
+#endif
+    
+//向文件中写入输出坐标值,供可视化程序读取
+    {
+        std::ofstream os;
+        try {
+            os.open(filePath);
+
+//            os << setprecision(15) << setw(20) << setiosflags(ios::left) << preGps.x << "," << preGps.y << endl;
+//            os << setprecision(15) << setw(20) << setiosflags(ios::left) << curGps.x << "," << curGps.y << endl;
+//            os << setprecision(15) << setw(20) << setiosflags(ios::left) << target.x << "," << target.y << endl;
+//            os << setprecision(15) << setw(20) << setiosflags(ios::left) << result.x << "," << result.y << endl;
+
+            os << setprecision(15) << preGps.x << "," << preGps.y << endl;
+            os << setprecision(15) << curGps.x << "," << curGps.y << endl;
+            os << setprecision(15) << target.x << "," << target.y << endl;
+            os << setprecision(15) << result.x << "," << result.y << endl;
+
+            os.close();
+        } catch (...) {
+            os.close();
+        }
+
+
+        std::ifstream is;
+        try {
+            is.open(filePath);
+
+            while(!is.eof())
+            {
+                char  line[255] = {0};
+                is.getline(line, 255);
+                double x,y;
+                sscanf(line,"%lf,%lf",&x,&y);
+//                printf("%lf,%lf\n",x,y);
+            }
+
+            is.close();
+        } catch (...) {
+            is.close();
+        }
+        
+    }
+    
+    Point3d tt,dd;
+    dd = dd - tt;
+    system("open /Users/TLG/Documents/Exercise/QtTest/build-test1-Desktop_Qt_5_11_3_clang_64bit-Debug/test1.app");
     
    return 0;
 }

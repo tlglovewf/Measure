@@ -1,0 +1,2322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		111D39B8E6F24CE8BD31707E /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BEEB846C4D644C099EA7883C /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				E7128573BECA4F8B90165A02 /* CMake Rules */,
+			);
+			dependencies = (
+				CE2C7DBE7C2442E3BCA0ED1C /* PBXTargetDependency */,
+				2045841FF4ED4FC7BA9D0555 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		FE5EA2DEC4314129A7849ABD /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 03C8D838A7714F93AC22A7FD /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				883EB59D28F14A7E873D72A4 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		1FA71895B146482CA7E4AB23 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A21EB5B667BA4501AF09D4A5 /* main.cpp */; };
+		6A0016C821F6E993007021C3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A0016C721F6E993007021C3 /* main.cpp */; };
+		6AACE17921D749ED008FC4BE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AACE17821D749ED008FC4BE /* main.cpp */; };
+		6AD7F13221D46D7700DA0101 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AD7F13021D46D7700DA0101 /* main.cpp */; };
+		6AF14CDC21D32A1F00EAEB62 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AF14CCA21D329E700EAEB62 /* main.cpp */; };
+		6AF14CDD21D32B1A00EAEB62 /* MathHelper.h in Sources */ = {isa = PBXBuildFile; fileRef = 6A5BEE7121D23CC2004793C5 /* MathHelper.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6AACE16E21D7499C008FC4BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2BA198A8C6144F183578A13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE5EA2DEC4314129A7849ABD;
+			remoteInfo = ZERO_CHECK;
+		};
+		6AD7F12521D46D3E00DA0101 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2BA198A8C6144F183578A13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE5EA2DEC4314129A7849ABD;
+			remoteInfo = ZERO_CHECK;
+		};
+		6AF14CD321D32A0800EAEB62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2BA198A8C6144F183578A13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE5EA2DEC4314129A7849ABD;
+			remoteInfo = ZERO_CHECK;
+		};
+		92CE7AAF252D4AD6896F1D61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2BA198A8C6144F183578A13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22CDE3B14E5F45DB81682B46;
+			remoteInfo = Measure;
+		};
+		D0EC737E1BE843B8A29E2D4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2BA198A8C6144F183578A13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE5EA2DEC4314129A7849ABD;
+			remoteInfo = ZERO_CHECK;
+		};
+		F348576DDEC34570901B60CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2BA198A8C6144F183578A13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE5EA2DEC4314129A7849ABD;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6A0016C321F6E993007021C3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		252C22D01DAD41B78C832B51 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		2B4C53F314094C69942213D2 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		6A0016C521F6E993007021C3 /* FunctionTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FunctionTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A0016C721F6E993007021C3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6A5BEE7121D23CC2004793C5 /* MathHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathHelper.h; sourceTree = "<group>"; };
+		6AACE17621D7499C008FC4BE /* OpenCvTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenCvTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AACE17821D749ED008FC4BE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6AD7F12E21D46D3E00DA0101 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD7F13021D46D7700DA0101 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6AF14CCA21D329E700EAEB62 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6AF14CDB21D32A0800EAEB62 /* MeasureTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MeasureTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7688E566E67D4A028CC0062D /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		919F2A3C39894081846A2B0F /* Measure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Measure; sourceTree = BUILT_PRODUCTS_DIR; };
+		A21EB5B667BA4501AF09D4A5 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = main.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A0016C221F6E993007021C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3CDE09AF1B9C426F96934BCE /* Measure */ = {
+			isa = PBXGroup;
+			children = (
+				6A5BEE7021D23CA8004793C5 /* Include Files */,
+				E2798B2C2F824A7C91C55AF9 /* Source Files */,
+				7688E566E67D4A028CC0062D /* CMakeLists.txt */,
+			);
+			name = Measure;
+			sourceTree = "<group>";
+		};
+		642E3B148503476ABFBD00F0 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				82276E3F37A141818CECB9C1 /* CMake Rules */,
+				2B4C53F314094C69942213D2 /* CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		6A0016C621F6E993007021C3 /* FunctionTest */ = {
+			isa = PBXGroup;
+			children = (
+				6A0016C721F6E993007021C3 /* main.cpp */,
+			);
+			name = FunctionTest;
+			path = build/FunctionTest;
+			sourceTree = "<group>";
+		};
+		6A5BEE7021D23CA8004793C5 /* Include Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A5BEE7121D23CC2004793C5 /* MathHelper.h */,
+			);
+			name = "Include Files";
+			sourceTree = "<group>";
+		};
+		6AACE17721D749D1008FC4BE /* OpenCVTest */ = {
+			isa = PBXGroup;
+			children = (
+				6AACE17821D749ED008FC4BE /* main.cpp */,
+			);
+			path = OpenCVTest;
+			sourceTree = "<group>";
+		};
+		6AD7F12F21D46D6000DA0101 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				6AD7F13021D46D7700DA0101 /* main.cpp */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		6AF14CC921D329E700EAEB62 /* VoMeasure */ = {
+			isa = PBXGroup;
+			children = (
+				6AF14CCA21D329E700EAEB62 /* main.cpp */,
+			);
+			name = VoMeasure;
+			path = build/VoMeasure;
+			sourceTree = "<group>";
+		};
+		716043DA786D4943B028021C /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				7A1398F916A14F59AC8F40D3 /* CMake Rules */,
+				252C22D01DAD41B78C832B51 /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		7A1398F916A14F59AC8F40D3 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		82276E3F37A141818CECB9C1 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		92ADF7B3F5F44FEAB167D666 = {
+			isa = PBXGroup;
+			children = (
+				6AACE17721D749D1008FC4BE /* OpenCVTest */,
+				6AD7F12F21D46D6000DA0101 /* Test */,
+				3CDE09AF1B9C426F96934BCE /* Measure */,
+				716043DA786D4943B028021C /* ALL_BUILD */,
+				642E3B148503476ABFBD00F0 /* ZERO_CHECK */,
+				6AF14CC921D329E700EAEB62 /* VoMeasure */,
+				6A0016C621F6E993007021C3 /* FunctionTest */,
+				D16AAC50F1D94EC5B2C16BB0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D16AAC50F1D94EC5B2C16BB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				919F2A3C39894081846A2B0F /* Measure */,
+				6AF14CDB21D32A0800EAEB62 /* MeasureTest */,
+				6AD7F12E21D46D3E00DA0101 /* Test */,
+				6AACE17621D7499C008FC4BE /* OpenCvTest */,
+				6A0016C521F6E993007021C3 /* FunctionTest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2798B2C2F824A7C91C55AF9 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				A21EB5B667BA4501AF09D4A5 /* main.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22CDE3B14E5F45DB81682B46 /* Measure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 656A9F5E900545479D2F4A24 /* Build configuration list for PBXNativeTarget "Measure" */;
+			buildPhases = (
+				73C2AB814E25458AA6171D74 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB034005FF1542C889D16AEF /* PBXTargetDependency */,
+			);
+			name = Measure;
+			productName = Measure;
+			productReference = 919F2A3C39894081846A2B0F /* Measure */;
+			productType = "com.apple.product-type.tool";
+		};
+		6A0016C421F6E993007021C3 /* FunctionTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A0016CD21F6E993007021C3 /* Build configuration list for PBXNativeTarget "FunctionTest" */;
+			buildPhases = (
+				6A0016C121F6E993007021C3 /* Sources */,
+				6A0016C221F6E993007021C3 /* Frameworks */,
+				6A0016C321F6E993007021C3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FunctionTest;
+			productName = FunctionTest;
+			productReference = 6A0016C521F6E993007021C3 /* FunctionTest */;
+			productType = "com.apple.product-type.tool";
+		};
+		6AACE16C21D7499C008FC4BE /* OpenCvTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AACE17121D7499C008FC4BE /* Build configuration list for PBXNativeTarget "OpenCvTest" */;
+			buildPhases = (
+				6AACE16F21D7499C008FC4BE /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AACE16D21D7499C008FC4BE /* PBXTargetDependency */,
+			);
+			name = OpenCvTest;
+			productName = Measure;
+			productReference = 6AACE17621D7499C008FC4BE /* OpenCvTest */;
+			productType = "com.apple.product-type.tool";
+		};
+		6AD7F12321D46D3E00DA0101 /* Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AD7F12921D46D3E00DA0101 /* Build configuration list for PBXNativeTarget "Test" */;
+			buildPhases = (
+				6AD7F12621D46D3E00DA0101 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AD7F12421D46D3E00DA0101 /* PBXTargetDependency */,
+			);
+			name = Test;
+			productName = Measure;
+			productReference = 6AD7F12E21D46D3E00DA0101 /* Test */;
+			productType = "com.apple.product-type.tool";
+		};
+		6AF14CD121D32A0800EAEB62 /* MeasureTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AF14CD621D32A0800EAEB62 /* Build configuration list for PBXNativeTarget "MeasureTest" */;
+			buildPhases = (
+				6AF14CD421D32A0800EAEB62 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AF14CD221D32A0800EAEB62 /* PBXTargetDependency */,
+			);
+			name = MeasureTest;
+			productName = Measure;
+			productReference = 6AF14CDB21D32A0800EAEB62 /* MeasureTest */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2BA198A8C6144F183578A13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0920;
+				TargetAttributes = {
+					6A0016C421F6E993007021C3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A7D995C1992B429EBE143B25 /* Build configuration list for PBXProject "Measure" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 92ADF7B3F5F44FEAB167D666;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				111D39B8E6F24CE8BD31707E /* ALL_BUILD */,
+				22CDE3B14E5F45DB81682B46 /* Measure */,
+				FE5EA2DEC4314129A7849ABD /* ZERO_CHECK */,
+				6AF14CD121D32A0800EAEB62 /* MeasureTest */,
+				6AD7F12321D46D3E00DA0101 /* Test */,
+				6AACE16C21D7499C008FC4BE /* OpenCvTest */,
+				6A0016C421F6E993007021C3 /* FunctionTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		883EB59D28F14A7E873D72A4 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/TLG/Documents/GitHub/measure/build -f /Users/TLG/Documents/GitHub/measure/build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		E7128573BECA4F8B90165A02 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/TLG/Documents/GitHub/measure/build -f /Users/TLG/Documents/GitHub/measure/build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A0016C121F6E993007021C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A0016C821F6E993007021C3 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AACE16F21D7499C008FC4BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AACE17921D749ED008FC4BE /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AD7F12621D46D3E00DA0101 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AD7F13221D46D7700DA0101 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AF14CD421D32A0800EAEB62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AF14CDD21D32B1A00EAEB62 /* MathHelper.h in Sources */,
+				6AF14CDC21D32A1F00EAEB62 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73C2AB814E25458AA6171D74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FA71895B146482CA7E4AB23 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2045841FF4ED4FC7BA9D0555 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22CDE3B14E5F45DB81682B46 /* Measure */;
+			targetProxy = 92CE7AAF252D4AD6896F1D61 /* PBXContainerItemProxy */;
+		};
+		6AACE16D21D7499C008FC4BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE5EA2DEC4314129A7849ABD /* ZERO_CHECK */;
+			targetProxy = 6AACE16E21D7499C008FC4BE /* PBXContainerItemProxy */;
+		};
+		6AD7F12421D46D3E00DA0101 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE5EA2DEC4314129A7849ABD /* ZERO_CHECK */;
+			targetProxy = 6AD7F12521D46D3E00DA0101 /* PBXContainerItemProxy */;
+		};
+		6AF14CD221D32A0800EAEB62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE5EA2DEC4314129A7849ABD /* ZERO_CHECK */;
+			targetProxy = 6AF14CD321D32A0800EAEB62 /* PBXContainerItemProxy */;
+		};
+		BB034005FF1542C889D16AEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE5EA2DEC4314129A7849ABD /* ZERO_CHECK */;
+			targetProxy = D0EC737E1BE843B8A29E2D4B /* PBXContainerItemProxy */;
+		};
+		CE2C7DBE7C2442E3BCA0ED1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE5EA2DEC4314129A7849ABD /* ZERO_CHECK */;
+			targetProxy = F348576DDEC34570901B60CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D290542CFBF45438B09FF74 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/include/opencv,
+					"/Volumes/mac/ORB-SLAM2/include/eigen3",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include",
+					/opt/local/include,
+					/usr/local/include/eigen3,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		330D9A17BD9F48B4A919198E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build/build;
+			};
+			name = RelWithDebInfo;
+		};
+		387FFA5241BA49C0A4C6E7A0 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build/build;
+			};
+			name = MinSizeRel;
+		};
+		4C8966910074419A9388BE7D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/include/opencv,
+					"/Volumes/mac/ORB-SLAM2/include/eigen3",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include",
+					/opt/local/include,
+					/usr/local/include/eigen3,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		5CE1704C63DE48BEAF0885F6 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/include/opencv,
+					"/Volumes/mac/ORB-SLAM2/include/eigen3",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include",
+					/opt/local/include,
+					/usr/local/include/eigen3,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		62DE23CBB8A24C278AF8BE91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build/build;
+			};
+			name = Release;
+		};
+		63740E52734A49C1862E4DBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Release";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Release/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Measure;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		65EBF6DEFCE346C2A7073166 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/include/opencv,
+					"/Volumes/mac/ORB-SLAM2/include/eigen3",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include",
+					/opt/local/include,
+					/usr/local/include/eigen3,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		6A0016C921F6E993007021C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+			};
+			name = Debug;
+		};
+		6A0016CA21F6E993007021C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+			};
+			name = Release;
+		};
+		6A0016CB21F6E993007021C3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+			};
+			name = MinSizeRel;
+		};
+		6A0016CC21F6E993007021C3 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+			};
+			name = RelWithDebInfo;
+		};
+		6AACE17221D7499C008FC4BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Debug";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		6AACE17321D7499C008FC4BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Release";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Release/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		6AACE17421D7499C008FC4BE /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/MinSizeRel";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/MinSizeRel/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		6AACE17521D7499C008FC4BE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/RelWithDebInfo";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/RelWithDebInfo/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		6AD7F12A21D46D3E00DA0101 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Debug";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		6AD7F12B21D46D3E00DA0101 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Release";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Release/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		6AD7F12C21D46D3E00DA0101 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/MinSizeRel";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/MinSizeRel/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		6AD7F12D21D46D3E00DA0101 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/RelWithDebInfo";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/RelWithDebInfo/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		6AF14CD721D32A0800EAEB62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Debug";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Debug/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		6AF14CD821D32A0800EAEB62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Release";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Release/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		6AF14CD921D32A0800EAEB62 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/MinSizeRel";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/MinSizeRel/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		6AF14CDA21D32A0800EAEB62 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/RelWithDebInfo";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/RelWithDebInfo/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		6B94510A518D4866953161AA /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/MinSizeRel";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/MinSizeRel/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Measure;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		86EC39FF2C3D46F3B2C191DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/include/opencv,
+					"/Volumes/mac/ORB-SLAM2/include/eigen3",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include",
+					/opt/local/include,
+					/usr/local/include/eigen3,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		8779CB4993784E119165CB9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/include/opencv,
+					"/Volumes/mac/ORB-SLAM2/include/eigen3",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include",
+					/opt/local/include,
+					/usr/local/include/eigen3,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		8F65C6E5DA5141DA99967604 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/include/opencv,
+					"/Volumes/mac/ORB-SLAM2/include/eigen3",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include",
+					/opt/local/include,
+					/usr/local/include/eigen3,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		93026F6E37BB4AA2A1783CC8 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/RelWithDebInfo";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/RelWithDebInfo/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Measure;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		C32846143DC24DD3BC42CC1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Volumes/mac/ORB-SLAM2/include/eigen3";
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Debug";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-msse3",
+					"-std=c++11",
+					"-pthread",
+					"-march=native",
+					"-Wno-deprecated-declarations",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/local/lib/libopencv_dnn.3.4.0.dylib,
+					/usr/local/lib/libopencv_ml.3.4.0.dylib,
+					/usr/local/lib/libopencv_objdetect.3.4.0.dylib,
+					/usr/local/lib/libopencv_shape.3.4.0.dylib,
+					/usr/local/lib/libopencv_stitching.3.4.0.dylib,
+					/usr/local/lib/libopencv_superres.3.4.0.dylib,
+					/usr/local/lib/libopencv_videostab.3.4.0.dylib,
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/Debug/libpangolin.dylib",
+					/usr/local/lib/libopencv_calib3d.3.4.0.dylib,
+					/usr/local/lib/libopencv_features2d.3.4.0.dylib,
+					/usr/local/lib/libopencv_flann.3.4.0.dylib,
+					/usr/local/lib/libopencv_highgui.3.4.0.dylib,
+					/usr/local/lib/libopencv_photo.3.4.0.dylib,
+					/usr/local/lib/libopencv_video.3.4.0.dylib,
+					/usr/local/lib/libopencv_videoio.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgcodecs.3.4.0.dylib,
+					/usr/local/lib/libopencv_imgproc.3.4.0.dylib,
+					/usr/local/lib/libopencv_core.3.4.0.dylib,
+					"-framework",
+					OpenGL,
+					/opt/local/lib/libGLEW.dylib,
+					"-framework",
+					Cocoa,
+					/usr/local/lib/libavcodec.dylib,
+					/usr/local/lib/libavformat.dylib,
+					/usr/local/lib/libavutil.dylib,
+					/usr/local/lib/libswscale.dylib,
+					/usr/local/lib/libavdevice.dylib,
+					/usr/local/lib/libpng.dylib,
+					/usr/lib/libz.dylib,
+					/usr/local/lib/libjpeg.dylib,
+					/usr/local/lib/libtiff.dylib,
+					/usr/local/lib/libIlmImf.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Measure;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/include /usr/local/include/opencv /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include /Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include /opt/local/include /usr/local/include/eigen3";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		D776124F14E043E2A7B103A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/include/opencv,
+					"/Volumes/mac/ORB-SLAM2/include/eigen3",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/include",
+					"/Volumes/mac/ORB-SLAM2/Thirdparty/Pangolin/build/src/include",
+					/opt/local/include,
+					/usr/local/include/eigen3,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		E0C12C6A2A4A404B807764BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/TLG/Documents/GitHub/measure/build/build;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03C8D838A7714F93AC22A7FD /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86EC39FF2C3D46F3B2C191DF /* Debug */,
+				8779CB4993784E119165CB9B /* Release */,
+				8F65C6E5DA5141DA99967604 /* MinSizeRel */,
+				4C8966910074419A9388BE7D /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		656A9F5E900545479D2F4A24 /* Build configuration list for PBXNativeTarget "Measure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C32846143DC24DD3BC42CC1E /* Debug */,
+				63740E52734A49C1862E4DBF /* Release */,
+				6B94510A518D4866953161AA /* MinSizeRel */,
+				93026F6E37BB4AA2A1783CC8 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6A0016CD21F6E993007021C3 /* Build configuration list for PBXNativeTarget "FunctionTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A0016C921F6E993007021C3 /* Debug */,
+				6A0016CA21F6E993007021C3 /* Release */,
+				6A0016CB21F6E993007021C3 /* MinSizeRel */,
+				6A0016CC21F6E993007021C3 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6AACE17121D7499C008FC4BE /* Build configuration list for PBXNativeTarget "OpenCvTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AACE17221D7499C008FC4BE /* Debug */,
+				6AACE17321D7499C008FC4BE /* Release */,
+				6AACE17421D7499C008FC4BE /* MinSizeRel */,
+				6AACE17521D7499C008FC4BE /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6AD7F12921D46D3E00DA0101 /* Build configuration list for PBXNativeTarget "Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AD7F12A21D46D3E00DA0101 /* Debug */,
+				6AD7F12B21D46D3E00DA0101 /* Release */,
+				6AD7F12C21D46D3E00DA0101 /* MinSizeRel */,
+				6AD7F12D21D46D3E00DA0101 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6AF14CD621D32A0800EAEB62 /* Build configuration list for PBXNativeTarget "MeasureTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AF14CD721D32A0800EAEB62 /* Debug */,
+				6AF14CD821D32A0800EAEB62 /* Release */,
+				6AF14CD921D32A0800EAEB62 /* MinSizeRel */,
+				6AF14CDA21D32A0800EAEB62 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A7D995C1992B429EBE143B25 /* Build configuration list for PBXProject "Measure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0C12C6A2A4A404B807764BC /* Debug */,
+				62DE23CBB8A24C278AF8BE91 /* Release */,
+				387FFA5241BA49C0A4C6E7A0 /* MinSizeRel */,
+				330D9A17BD9F48B4A919198E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BEEB846C4D644C099EA7883C /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D776124F14E043E2A7B103A1 /* Debug */,
+				65EBF6DEFCE346C2A7073166 /* Release */,
+				5CE1704C63DE48BEAF0885F6 /* MinSizeRel */,
+				1D290542CFBF45438B09FF74 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F2BA198A8C6144F183578A13 /* Project object */;
+}

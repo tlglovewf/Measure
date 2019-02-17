@@ -1,0 +1,3 @@
+/Users/TLG/Documents/GitHub/measure/build/CMakeFiles/Measure.dir
+/Users/TLG/Documents/GitHub/measure/build/CMakeFiles/ALL_BUILD.dir
+/Users/TLG/Documents/GitHub/measure/build/CMakeFiles/ZERO_CHECK.dir

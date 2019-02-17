@@ -13,6 +13,7 @@
 #include <opencv2/calib3d.hpp>
 #include <opencv2/imgproc.hpp>
 
+#include <fstream>
 
 #include <Eigen/Core>
 #include <Eigen/Geometry>
@@ -23,15 +24,19 @@ using namespace std;
 
 #define  TEST1 0
 
+
+const char* filePath="/Volumes/mac/Data/measureResult.txt";
+
 #if TEST1
-const Point2d input_pt (2735,850);
-const Point2d output_pt(2880,810);
+//const Point2d input_pt (2735,850);
+//const Point2d output_pt(2880,810);
 
-
+const Point2d input_pt (2757,866);
+const Point2d output_pt(2907,828);
 
 #else
-const Point2d input_pt (2979.1,711.3);
-const Point2d output_pt(3080.2,698.3);
+const Point2d input_pt (2975.7,983.8);
+const Point2d output_pt(3274.0,998.0);
 
 
 
@@ -43,17 +48,9 @@ const Point2d output_pt(3080.2,698.3);
 typedef std::vector<KeyPoint>  KeyVector;
 typedef std::vector<DMatch>    MatchVector;
 
-const int boarder = 20;     // 边缘宽度
-const int width   = 640;      // 宽度
-const int height  = 480;      // 高度
-const int ncc_window_size = 6;    // NCC 取的窗口半宽度
+const int ncc_window_size = 8;    // NCC 取的窗口半宽度
 const int ncc_area = (2*ncc_window_size+1)*(2*ncc_window_size+1); // NCC窗口面积
 
-// 检测一个点是否在图像边框内
-inline bool inside( const Vector2d& pt ) {
-    return pt(0,0) >= boarder && pt(1,0)>=boarder
-    && pt(0,0)+boarder<width && pt(1,0)+boarder<=height;
-}
 // 双线性灰度插值
 inline double getBilinearInterpolatedValue( const Mat& img, const Point2d& pt ) {
     uchar* d = & img.data[ int(pt.y)*img.step+int(pt.x) ];
@@ -233,17 +230,35 @@ void featureTracking(Mat img_1, Mat img_2, vector<Point2f>& points1, vector<Poin
 }
 
 
-
-
 int main(void)
 {
-    
 #if TEST1
     Mat img1 =imread("/Volumes/mac/Data/measure/4014.jpg");
     Mat img2 =imread("/Volumes/mac/Data/measure/4015.jpg");
+    
+    //畸变校正
+//    Mat img1_distort,img2_distort;
+//
+//
+//    Mat K = (Mat_<double>(3,3) <<  1.8144486313396042e+03,0  ,2.0521093136805948e+03,
+//             0, 1.8144486313396042e+03, 1.0898609600712157e+03,
+//             0, 0, 1);
+//
+//
+//    Mat  cam_distort = (Mat_<double>(14,1) << 2.7143309169665835e+00, 7.6144381712092502e-01, 4.2032650006901159e-04,
+//                        2.0658547225350938e-05, -3.9272644112434946e-01,
+//                        2.8270485246735952e+00, 1.0376228716992399e+00,
+//                        -5.2110054743233547e-01, 0. ,0. ,0. ,0. ,0. ,0.);
+//
+//    undistort(img1, img1_distort, K, cam_distort);
+//    undistort(img2, img2_distort, K, cam_distort);
+//
+//    imwrite("/Volumes/mac/Data/measure/4014_distort.jpg", img1_distort);
+//    imwrite("/Volumes/mac/Data/measure/4015_distort.jpg", img2_distort);
+    
 #else
-    Mat img1 =imread("/Volumes/mac/Data/measure/1_1.jpg");
-    Mat img2 =imread("/Volumes/mac/Data/measure/1_2.jpg");
+    Mat img1 =imread("/Volumes/mac/Data/measure/2_1.jpg");
+    Mat img2 =imread("/Volumes/mac/Data/measure/2_2.jpg");
 #endif
     KeyVector img_key1, img_key2;
     Mat descriptor_1, descriptor_2;
@@ -270,38 +285,52 @@ int main(void)
 #undef IMG1
 #undef IMG2
     
+#if 0
     BFMatcher matcher(NORM_HAMMING);
     MatchVector tmpmatches;
     matcher.match(descriptor_1, descriptor_2, tmpmatches);
-    
+
     double min_dist = 10000, max_dist = 0;
-    
+
     for(int i = 0; i < descriptor_1.rows;++i)
     {
         double dist = tmpmatches[i].distance;
         if(dist < min_dist)min_dist = dist;
         if(dist > max_dist)max_dist = dist;
     }
-    
+
     cout << " mindist : " << min_dist << endl;
     cout << " maxdist : " << max_dist << endl;
-    
+
     for(int i = 0; i < tmpmatches.size();++i)
     {
-        const int sz = 5;
-        Rect2f rect(0,0,sz,sz);
-        if( (img_key1[tmpmatches[i].queryIdx].pt - img_key2[tmpmatches[i].trainIdx].pt).inside(rect))
-            continue;
+//        const int sz = 5;
+//        Rect2f rect(0,0,sz,sz);
+//        if( (img_key1[tmpmatches[i].queryIdx].pt - img_key2[tmpmatches[i].trainIdx].pt).inside(rect))
+//            continue;
 //                Rect2f  rect(0,1600,4096,600);
 //                if(img_key1[tmpmatches[i].queryIdx].pt.inside(rect) )
 //                    continue;
-        
+
         if( tmpmatches[i].distance <= max(2 * min_dist,30.0) )
         {
             goodmatches.push_back(tmpmatches[i]);
         }
     }
     
+#else
+    
+    cv::Ptr<cv::DescriptorMatcher>  matcher = cv::DescriptorMatcher::create( "BruteForce-Hamming");
+    double knn_match_ratio = 0.7;
+    vector< vector<cv::DMatch> > matches_knn;
+    matcher->knnMatch( descriptor_1, descriptor_2, matches_knn, 2 );
+    
+    for ( size_t i=0; i<matches_knn.size(); i++ )
+    {
+        if (matches_knn[i][0].distance < knn_match_ratio * matches_knn[i][1].distance )
+            goodmatches.push_back( matches_knn[i][0] );
+    }
+#endif
     
 #else
     vector<uchar> status;
@@ -313,10 +342,10 @@ int main(void)
     
     
     
-    for(int i = 0;i < (int)tmpmatches.size(); ++i)
+    for(int i = 0;i < (int)goodmatches.size(); ++i)
     {
-        points1.push_back( img_key1[tmpmatches[i].queryIdx].pt);
-        points2.push_back( img_key2[tmpmatches[i].trainIdx].pt);
+        points1.push_back( img_key1[goodmatches[i].queryIdx].pt);
+        points2.push_back( img_key2[goodmatches[i].trainIdx].pt);
     }
     
     Mat fdmat = findFundamentalMat(points1, points2);
@@ -341,10 +370,11 @@ int main(void)
     {
         Scalar color = Scalar::all(-1);//随机产生颜色
         Scalar red = Scalar(0,0,255);//bgr
-        circle(img1, input_pt, 5, Scalar(0,255,0));
+        const int zzlen = 2;
+        circle(img1, input_pt, zzlen, Scalar(0,255,0));
         
-        circle(img2, input_pt, 5, Scalar(0,255,0));
-        circle(img2, output_pt , 5, red);//在img2中绘制出真实的同名点
+        circle(img2, input_pt, zzlen, Scalar(0,255,0));
+        circle(img2, output_pt , zzlen, red);//在img2中绘制出真实的同名点
          //绘制出极线    上面的验证点应该正好在绘制出的极线上
         double y1 = -epilines1[i][2] / epilines1[i][1];
         double y2 = -(epilines1[i][2] + epilines1[i][0] * img2.cols) / epilines1[i][1];
@@ -357,7 +387,7 @@ int main(void)
     //块匹配
     
     const double searchlen = input_pt.x + 300;
-    const double space = 0.7;
+    const double space = 0.5;
     
     double best_ncc = -1.0;
     Point2d best_px_curr ;
@@ -375,27 +405,43 @@ int main(void)
             best_ncc = ncc;
             best_px_curr = px_curr;
             
-            circle(img2, px_curr, 1, Scalar(255,255,0));
-            
         }
-//        circle(img2, px_curr, 1, Scalar(255,0,0));
+        circle(img2, px_curr, 1, Scalar(255,0,0));
     }
     
-    if( best_ncc < 0.70f)
-    {
-        throw  "error";
-    }
+//    if( best_ncc < 0.70f)
+//    {
+//        throw  "error";
+//    }
     
     cout << "math pair : " << goodmatches.size() << endl;
     cout << " find the " << best_ncc << endl << output_pt.x << " " << output_pt.y << "  matching point is " << endl <<
     best_px_curr.x << " " << best_px_curr.y << endl;
-    imwrite("/Volumes/mac/Data/measure/base.png", img1);
     
+    circle(img2, best_px_curr, 2, Scalar(255,255,0));
+    imwrite("/Volumes/mac/Data/measure/base.png", img2);
+    
+//    goodmatches.clear();
     drawMatches(img1, img_key1, img2, img_key2, goodmatches, img_match);
     
     imwrite("/Volumes/mac/Data/measure/search.png", img_match);
     
-    waitKey(0);
+    
+    std::ofstream file;
+
+    file.open(filePath);
+    if(file.is_open())
+    {
+        file << "110" << endl;
+    }
+    else
+    {
+        throw "error";
+    }
+    
+    system("open /Users/TLG/Documents/Exercise/QtTest/build-test1-Desktop_Qt_5_11_3_clang_64bit-Debug/test1.app");
+    
+//    waitKey(0);
     
     return 0;
 }

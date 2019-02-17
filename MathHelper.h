@@ -27,6 +27,7 @@ public:
      @param lat 维度
      @return    墨卡托投影坐标
     **/
+     
     static cv::Point3d ComputeMerctorPosFromGPS( double lon, double lat)
     {
         cv::Point3d point;
@@ -127,12 +128,12 @@ public:
         GeoMath::normalize(xAxis);
         
         cv::Point3d uyAxis = zAxis.cross(xAxis);
-        
+
         GeoMath::normalize(uyAxis);
         //构建世界变换矩阵  相机 -> 世界
         cv::Mat R = (cv::Mat_<double>(4,4) << xAxis.x , xAxis.y , xAxis.z ,pt.x,
                                               uyAxis.x, uyAxis.y, uyAxis.z,pt.y,
-                                              zAxis.x , zAxis.y , zAxis.z ,pt.z,
+                                              zAxis.x ,zAxis.y , zAxis.z  ,pt.z,
                                               0       ,0        ,0        ,1);
         return R;
     }
@@ -186,6 +187,62 @@ public:
             l += 180.0;
         h = sqrt(x * x + y * y) / cos(f1) - a / sqrt(1 - eq * sin(f1) * sin(f1));
         return cv::Point2d{l, b};// h};
+    }
+    
+    /*依指定经度返回纵向的瓦片序号，即x
+     longitude：经度坐标，单位为度
+     zoom：瓦片的zoom级别
+     n = 2 ^ zoom
+     x = ((lon_deg + 180) / 360) * n
+     注意：函数没有检查输入是否有效，因此可能返回无效的x
+     */
+    static inline int Lon2tileX(double longitude, int zoom)
+    {
+        return (int)(floor((longitude + 180.0) / 360.0 * pow(2.0, zoom)));
+    }
+    
+    /*依指定纬度返回横向的瓦片序号，即y
+     latitude：纬度坐标，单位为度
+     zoom：瓦片的zoom级别
+     n = 2 ^ zoom
+     x = (1 - (log(tan(lat_rad) + sec(lat_rad)) / π)) / 2 * n
+     注意：函数没有检查输入是否有效，因此可能返回无效的y
+     */
+    static inline int Lat2tileY(double latitude, int zoom)
+    {
+        double radians = latitude * (M_PI / 180.0);
+        
+        return (int)(floor((1.0 - (log(tan(radians) + 1.0 / cos(radians)) / M_PI)) * pow(2.0, zoom - 1)));
+        
+        //        return (int)(floor((90.0 - latitude) / 180.0 * pow(2.0, zoom)));
+    }
+    /*对特定瓦片序号返回经度
+     tileX：纵向的瓦片序号，即x
+     zoom：瓦片的zoom级别
+     n = 2 ^ zoom
+     lon_deg = tileX / n * 360.0 - 180.0
+     注意：经度范围为+- 180度
+     */
+    static inline double tileX2Lon(int tileX, int zoom)
+    {
+        return tileX / pow(2.0, zoom) * 360.0 - 180.0;
+    }
+    
+    /*对特定瓦片序号返回纬度
+     tileY：横向的瓦片序号，即y
+     zoom：瓦片的zoom级别
+     n = 2 ^ zoom
+     lat_rad = arctan(sinh(π * (1 - 2 * tileY / n)))
+     lat_deg = lat_rad * 180.0 / π
+     注意：纬度范围为+- 85.0511度
+     */
+    static inline double tileY2Lat(int tileY, int zoom)
+    {
+        double n = M_PI - 2.0 * M_PI * tileY / pow(2.0, zoom);
+        
+        return 180.0 / M_PI * atan(0.5 * (exp(n) - exp(-n)));
+        
+        //        return 90.0 - tileY / pow(2.0, zoom) * 180.0;
     }
 };
 
